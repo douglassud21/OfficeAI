@@ -10,6 +10,10 @@ def create_app():
 
     db.init_app(app)
 
+    from models.solicitacao import Solicitacao
+    from routes.solicitacoes import solicitacoes_bp
+    app.register_blueprint(solicitacoes_bp)
+
     @app.route('/')
     def index():
         return 'OfficeAI está no ar! 🚀'
@@ -18,7 +22,3 @@ def create_app():
         db.create_all()
 
     return app
-
-if __name__ == '__main__':
-    app = create_app()
-    app.run(debug=True)
