@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OfficeAI — Protocolo de Solicitações</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar__mark">OfficeAI</div>
+  <div class="topbar__sub">protocolo de solicitações</div>
+</header>
+
+<main class="wrap">
+
+  <section class="intake">
+    <h1 class="intake__title">Nova solicitação</h1>
+    <p class="intake__hint">Descreva o pedido do cliente em texto livre. O sistema identifica cliente, categoria, prioridade e prazo automaticamente.</p>
+
+    <form id="form-solicitacao" class="intake__form">
+      <label for="texto_original" class="field-label">Descrição da solicitação</label>
+      <textarea
+        id="texto_original"
+        name="texto_original"
+        rows="4"
+        placeholder="Ex: João da Silva solicitou a revisão do contrato de prestação de serviços. Precisa de retorno até sexta-feira, assunto urgente."
+        required
+      ></textarea>
+      <button type="submit" id="btn-enviar">Protocolar solicitação</button>
+    </form>
+
+    <div id="feedback" class="feedback" hidden></div>
+  </section>
+
+  <section class="list-section">
+    <div class="list-section__head">
+      <h2 class="list-section__title">Solicitações protocoladas</h2>
+      <button id="btn-atualizar" class="btn-ghost" type="button">Atualizar</button>
+    </div>
+
+    <div id="lista" class="tickets">
+      <p class="tickets__empty">Carregando…</p>
+    </div>
+  </section>
+
+</main>
+
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

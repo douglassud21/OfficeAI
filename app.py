@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
 from config import Config
 
@@ -16,7 +16,7 @@ def create_app():
 
     @app.route('/')
     def index():
-        return 'OfficeAI está no ar! 🚀'
+        return render_template('index.html')
 
     with app.app_context():
         db.create_all()

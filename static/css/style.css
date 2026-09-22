@@ -1,0 +1,231 @@
+:root {
+  --paper: #F7F4EC;
+  --paper-raised: #FFFFFF;
+  --ink: #22201B;
+  --ink-soft: #5C5749;
+  --rule: #DAD3C0;
+  --stamp-red: #AB3B2E;
+  --stamp-red-bg: #F6E4E1;
+  --stamp-amber: #93641A;
+  --stamp-amber-bg: #F5E9D2;
+  --stamp-green: #3D6B47;
+  --stamp-green-bg: #E1EBE0;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'IBM Plex Sans', sans-serif;
+  line-height: 1.5;
+}
+
+.topbar {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  padding: 20px 32px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.topbar__mark {
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: 0.02em;
+}
+
+.topbar__sub {
+  color: var(--ink-soft);
+  font-size: 14px;
+}
+
+.wrap {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 40px 24px 80px;
+}
+
+.intake {
+  background: var(--paper-raised);
+  border: 1px solid var(--rule);
+  padding: 28px;
+  margin-bottom: 48px;
+}
+
+.intake__title {
+  margin: 0 0 8px;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.intake__hint {
+  margin: 0 0 20px;
+  color: var(--ink-soft);
+  font-size: 14px;
+  max-width: 52ch;
+}
+
+.field-label {
+  display: block;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  color: var(--ink-soft);
+  margin-bottom: 6px;
+}
+
+textarea {
+  width: 100%;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 15px;
+  padding: 12px;
+  border: 1px solid var(--rule);
+  background: var(--paper);
+  color: var(--ink);
+  resize: vertical;
+}
+
+textarea:focus {
+  outline: 2px solid var(--ink);
+  outline-offset: 1px;
+}
+
+#btn-enviar {
+  margin-top: 14px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 11px 20px;
+  background: var(--ink);
+  color: var(--paper);
+  border: none;
+  cursor: pointer;
+}
+
+#btn-enviar:hover { opacity: 0.85; }
+#btn-enviar:disabled { opacity: 0.5; cursor: default; }
+
+.btn-ghost {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 13px;
+  background: none;
+  border: 1px solid var(--rule);
+  padding: 6px 14px;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.btn-ghost:hover { border-color: var(--ink); }
+
+.feedback {
+  margin-top: 16px;
+  padding: 12px 14px;
+  font-size: 14px;
+  border-left: 3px solid var(--ink);
+}
+
+.feedback--erro {
+  border-color: var(--stamp-red);
+  background: var(--stamp-red-bg);
+  color: var(--stamp-red);
+}
+
+.feedback--aviso {
+  border-color: var(--stamp-amber);
+  background: var(--stamp-amber-bg);
+  color: var(--stamp-amber);
+}
+
+.feedback--ok {
+  border-color: var(--stamp-green);
+  background: var(--stamp-green-bg);
+  color: var(--stamp-green);
+}
+
+.list-section__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.list-section__title {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.tickets__empty {
+  color: var(--ink-soft);
+  font-size: 14px;
+}
+
+.ticket {
+  background: var(--paper-raised);
+  border: 1px solid var(--rule);
+  padding: 16px 18px;
+  margin-bottom: 12px;
+}
+
+.ticket__row1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.ticket__protocolo {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  color: var(--ink-soft);
+}
+
+.stamp {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 8px;
+  white-space: nowrap;
+}
+
+.stamp--alta { background: var(--stamp-red-bg); color: var(--stamp-red); }
+.stamp--media { background: var(--stamp-amber-bg); color: var(--stamp-amber); }
+.stamp--baixa { background: var(--stamp-green-bg); color: var(--stamp-green); }
+.stamp--pendente { background: var(--rule); color: var(--ink-soft); }
+
+.ticket__resumo {
+  font-size: 14px;
+  margin: 0 0 8px;
+}
+
+.ticket__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 16px;
+  font-size: 13px;
+  color: var(--ink-soft);
+}
+
+.ticket__meta span strong {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.ticket__excluir {
+  margin-top: 12px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  background: none;
+  border: 1px solid var(--rule);
+  padding: 5px 12px;
+  color: var(--stamp-red);
+  cursor: pointer;
+}
+
+.ticket__excluir:hover {
+  border-color: var(--stamp-red);
+  background: var(--stamp-red-bg);
+}
